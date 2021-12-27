@@ -9,5 +9,7 @@ player.on('timeupdate', throttle(({ seconds }) => {
     localStorage['videoplayer-current-time'] = seconds;
 }, 1000));
 
-player.setCurrentTime(localStorage['videoplayer-current-time']);
+if (localStorage['videoplayer-current-time']) {
+    player.setCurrentTime(localStorage['videoplayer-current-time']);
+}
 
